@@ -5,7 +5,14 @@
 	<title>My HCI Friends</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/hci-friends.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/hci-friends.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,6 +23,8 @@
 </head>
 
 <body>
+
+<div class="container">
 	<h1>My HCI Friends</h1>
 
 	<form id="addFriendForm" role="form" method="get" action="/add">
@@ -30,5 +39,20 @@
 	    </div>
 	    <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
 	</form>
+
+    <h4>Friends</h4>
+    <!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+    <!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
+    <!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+    {{#each friends}}
+        <div class="friends" id="{{name}}">
+                <h3><a class="clickyFriends" href="#">{{name}}</a></h3>
+                <img class="img-responsive img-rounded" src="{{imageURL}}" ... />
+                <h5>{{description}}</h5>
+        </div>
+    {{/each}}
+</div>
+
+
 </body>
 </html>

@@ -10,7 +10,19 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+    $( ".clickyFriends" ).click(changeName);
+
+
+    function changeName(e){
+        e.preventDefault();
+        var a = $(this).text();
+        var b = anagrammedName(a);
+        $(this).text(b);
+    }
+
 }
+
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -44,3 +56,4 @@ function anagrammedName(name) {
 		return name;
 	}
 }
+
